@@ -1,27 +1,31 @@
 #telalogin{
     width: 350px;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 5px 30px rgb(195, 195,195);
 }
 #fundo{
-    background-color: rgb(240, 194, 108)
-   
-    
+    background-color: white    
 
 
 }
 #telacadastro{
     width: 350px;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 5px 30px rgb(195, 195,195);
 
 }
+#telaturma{
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 5px 30px rgb(195, 195,195);
+}
+
 .card-img{
     align-items: center;
     width: 70px;
@@ -30,6 +34,85 @@
     top: -35;
     left: 40%;
     
+}
+
+.cardturma-img{
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: -50;
+    left: 40%;
+}
+
+#telaregistro{
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 5px 30px rgb(195, 195,195);
+}
+
+
+
+
+
+
+#myFooter {
+    background-color: #3a3f46;
+    color: white;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+    justify-content: space-around;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
 }
 
 
