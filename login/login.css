@@ -6,7 +6,7 @@
     box-shadow: 1px 5px 30px rgb(195, 195,195);
 }
 #fundo{
-    background-color: white    
+    background-color:white 
 
 
 }
@@ -56,11 +56,11 @@
     justify-content: center;
     display: flex;
 }
+.button{
+    justify-content: right;
+}
+
     
-
-
-
-
 
 
 #myFooter {
