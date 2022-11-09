@@ -26,6 +26,18 @@
     box-shadow: 1px 5px 30px rgb(195, 195,195);
 }
 
+.card-img-top{
+    max-width: 512px;
+    width: 100%;
+    height: auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float: left;
+
+
+}
+
+
 .card-img{
     align-items: center;
     width: 70px;
@@ -55,6 +67,10 @@
 .row{
     justify-content: center;
     display: flex;
+    flex-wrap: wrap;
+   
+
+
 }
 .button{
     justify-content: right;
