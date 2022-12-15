@@ -1,3 +1,41 @@
+<?php
+
+
+if (!empty($_GET['id']))
+{
+
+  include("pages/conexao/conexao.php");
+
+  $id = $_GET['id'];
+  echo $id;
+  $sqlSelect = "SELECT * FROM mentorias WHERE id_mentoria=$id";
+
+  $result = $mysqli->query($sqlSelect);
+
+  if($result->num_rows == 1)
+  {
+
+
+    while($user_data = $result->fetch_assoc())
+    {
+
+      $nome = $user_data["nome"];
+      $mentor = $user_data["mentor"];
+      $mentorado = $user_data["mentorado"];
+      $assunto = $user_data["assunto"] ;
+      $user_id = 7;
+      $aluno_id = 1;
+    }
+   
+  
+
+
+  
+  }
+}
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -17,17 +55,17 @@
 <body id="fundo">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <b><a class="navbar-brand" href="inicial.html">Monitorando.com</a></b>
+          <b><a class="navbar-brand" href="index.php">Monitorando.com</a></b>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="inicial.html">Página Inicial</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Página Inicial</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="registros.html">Registros</a>
+                <a class="nav-link active" aria-current="page" href="registros.php">Registros</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="turmas.html">Turmas</a>
@@ -36,7 +74,7 @@
                 <a class="nav-link active" aria-current="page" href="supervisao.html">Supervisionamento</a>
               </li>
               
-              <a href="index.html" button type="submit" class="btn btn-outline-danger btn-block ">Sair</button></a>
+              <a href="index.php" button type="submit" class="btn btn-outline-danger btn-block ">Sair</button></a>
 
           </div>
         </div>
@@ -50,29 +88,33 @@
           <h4 class="text-center">Registro de Mentoria</h4>
           
           <div class="card-body">
-              <form>
+              <form action="pages/processa/atualizar_registro.php" method="POST">
                   <div class="mb-3">
                     <label>Nome:</label>
-                    <input type="nome" class="form-control" id="" aria-describedby="emailHelp" placeholder="">
-                   
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Alunos:</label>
+
+                    <input type="nome" name="nome" class="form-control" id="" aria-describedby="emailHelp" placeholder="Ex.: Mentoria 1" value="<?php echo $nome?>">
+              
+                    <label for="exampleInputPassword1" class="form-label">Aluno Mentor:</label>
     
-                    <input type="aluno" class="form-control" id="" placeholder="">
-                    <br>
-                    <input type="aluno" class="form-control" id="" placeholder="">
+                    <input type="aluno" name="mentor" class="form-control" id="" placeholder="" value="<?php  echo $mentor ?>">
+                    
+                    <label for="exampleInputPassword1" class="form-label">Aluno Mentorado:</label>
+
+                    <input type="text" name="mentorado" class="form-control" id="" placeholder="" value="<?php echo $mentorado ?>">
     
                     <label for="exampleInputPassword1" class="form-label" maxlength=100>Assunto:</label>
     
-                    <input type="Senha" class="form-control" id="" placeholder="">
+                    <input type="text" name="assunto" class="form-control" id="" placeholder="Ex.: Tabela verdade" value="<?php echo $assunto ?>">
     
                   </div>
-                  
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                  <a href= "tabela.html" button type="submit" class="btn btn-outline-success btn-block">Registrar</button></a>
+
+                  <a href= "mentoriasregistro.php" button type="submit" class="btn btn-secondary btn-block">Mentorias resgistradas</button></a>
+                  &nbsp; &nbsp; &nbsp; &nbsp; 
+                  <input type="submit" class="btn btn-secondary btn-block " name="atualizar" value="Atualizar">
+
     
-                </form>
+                </form> 
+                
           </div>
         </div>
         <br>
@@ -80,6 +122,9 @@
         <br>    
         <br>
         <br>     
+
+
+      
 
       <div class="content">
       </div>

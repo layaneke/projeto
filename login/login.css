@@ -67,13 +67,18 @@
 .row{
     justify-content: center;
     display: flex;
-    flex-wrap: wrap;
+    margin: 10px;
    
 
 
 }
 .button{
     justify-content: right;
+}
+
+
+.cardturma{
+    
 }
 
     
@@ -135,6 +140,12 @@ body{
    flex: 0 0 auto;
    -webkit-flex: 0 0 auto;
 }
+
+
+
+
+
+
 
 
 

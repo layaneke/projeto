@@ -36,22 +36,62 @@
                 <a class="nav-link active" aria-current="page" href="supervisao.html">Supervisionamento</a>
               </li>
             </ul>
-            <div class="button"> 
-              <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
-              </div>
-          
-            
-
-
               
-            
+            <div class="button"> 
+          <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
+          </div>
+
           </div>
         </div>
       </nav>
-      <br>
+      
+      <div class="card" id="telaregistro">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4_HZM0qVwHmC5v0zXSOar2b8sjzCS4CNPd4J7OM4KEbsfH-YJ6UqASZhq8Tjx6asOkAU&usqp=CAU" class="cardturma-img">
+        <br>
+        <br>
+        <br>
+          <h4 class="text-center">Registro de Mentoria</h4>
+          
+          <div class="card-body">
+              <form method="post" action="pages/processa/registros_processa.php">
+                  <div class="mb-3">
+                    <label>Nome:</label>
+
+                    <input type="nome" class="form-control" id="" name="nome" aria-describedby="emailHelp" placeholder="Ex.: Mentoria 1" required>
+            
+                    <label for="exampleInputPassword1" class="form-label">Aluno Mentor:</label>
+    
+                    <input type="aluno" class="form-control" id="" placeholder="" name="mentor" required>
+                    
+                    <label for="exampleInputPassword1" class="form-label" >Aluno Mentorado:</label>
+
+                    <input type="aluno" class="form-control" id="" placeholder=""  name="mentorado" required>
+    
+                    <label for="exampleInputPassword1" class="form-label" maxlength=100 >Assunto:</label>
+    
+                    <input type="Senha" class="form-control" id=""  name="assunto" placeholder="Ex.: Tabela verdade " required>
+    
+                  </div>
+
+                  <a href="mentoriasregistro.php" ><input type="button" class="btn btn-secondary btn-block" value="Mentorias Registradas"></a>
+
+                  &nbsp; &nbsp; &nbsp; &nbsp; 
+
+                  <input type="submit" class="btn btn-secondary btn-block" name="registros" value="Registrar">
 
 
+    
+                </form>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>    
+        <br>
+        <br>     
 
+
+      
 
       <div class="content">
       </div>
@@ -84,6 +124,7 @@
         
               </div>
           </footer>
+    
 
 
 

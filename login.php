@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -28,26 +29,29 @@
         <br>
         
         <div class="card-body">
-            <form>
+            <form method="post" action="pages/processa/cad_processo.php">
               <h4 class="text-center">Login</h4>
               <br>
                 <div class="mb-3">
                   <label>E-mail:</label>
-                  <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Informe seu e-mail">
+
+                  <input type="email" class="form-control" name="email" id="" aria-describedby="emailHelp" placeholder="Informe seu e-mail">
                  
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label" maxlength=100>Senha:</label>
-                  <input type="password" class="form-control" id="" placeholder="Insira sua senha">
+
+                  <input type="password" class="form-control" name="senha" id="" placeholder="Insira sua senha">
                 </div>
                 
-                <a href="cadastro.html" button type="submit" class="btn btn-outline-success btn-block" >Cadastre-se</button></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;    
-                 
+                <!--<a href="cadastro.html" button type="submit" class="btn btn-outline-success btn-block" >Cadastre-se</button></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;    
+                -->
                 
                  
                 
                 
-                <a href="inicial.html"button type="submit" class="btn btn-outline-success btn-block ">Entrar</button></a>
+                <input type="submit" class="btn btn-outline-success btn-block " name="login" value="Entrar">
+
 
               </form>
         </div>

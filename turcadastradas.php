@@ -25,17 +25,17 @@
   
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
-        <b><a class="navbar-brand" href="inicial.html">Monitorando.com</a></b>
+        <b><a class="navbar-brand" href="index.php">Monitorando.com</a></b>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="inicial.html">Página Inicial</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Página Inicial</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="registros.html">Registros</a>
+              <a class="nav-link active" aria-current="page" href="registros.php">Registros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="turmas.html">Turmas</a>
@@ -43,9 +43,10 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="supervisao.html">Supervisionamento</a>
             </li>
-  
-            <div class="button">       
-              <a href="index.html" button type="submit" class="btn btn-outline-danger">Sair</button></a>
+          </ul>
+
+          <div class="button"> 
+            <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
             </div>
         
             
@@ -59,20 +60,40 @@
     <br>
     <br>
     <br>
-    
-    
-    <div class="card border-secondary mb-3" style="max-width: 18rem;" id="card1">
-        <div class="card-header bg-transparent border-secondary"><a href="alunos.html">INFO4v</a></div>
-        <div class="card-body text-ligth">
-          <h5 class="card-title"></h5>
-          <p class="card-text">AAAAAAAAAAAAAAAAAAA</p>
-        </div>
+    <div class="cardturma" id="turmas"> 
+    <div class="">
+      <?php
+      include("pages/conexao/conexao.php");
+        $sql_query = $mysqli->query("SELECT * from turma");
         
+        while ($dados=$sql_query->fetch_assoc()) {
+          echo "<div class='card border-secondary mb-3' style='max-width: 18rem;'>
+                <div class='card-header bg-transparent border-secondary'><a href='alunos.php'>$dados[nome]</a></div>
+                <div class='card-body text-ligth'>
+                <h5 class='card-title'></h5>
+                </div>
+                </div>";
+          
+
+        }
+        $mysqli->close();
+
+
+        /*<div class="card border-secondary mb-3" style="max-width: 18rem;" id="card1">
+          <div class="card-header bg-transparent border-secondary"><a href="alunos.html">INFO4v</a></div>
+          <div class="card-body text-ligth">
+            <h5 class="card-title"></h5>
+            <p class="card-text">AAAAAAAAAAAAAAAAAAA</p>
+          
+          </div>*/
+        ?>
+    
       </div>
-
-      
-
-
+    </div>
+  
+  
+  
+  
 
     <div class="content">
     </div>
@@ -105,6 +126,16 @@
       
             </div>
         </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+
+
+      
+
+
+
+  
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

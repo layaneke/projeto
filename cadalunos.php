@@ -29,16 +29,14 @@
             <a class="nav-link active" aria-current="page" href="turmas.html">Turmas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="supervisao.php">Supervisionamento</a>
+            <a class="nav-link active" aria-current="page" href="supervisao.html">Supervisionamento</a>
           </li>
-          </ul>
-
-          <div class="button"> 
-            <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
-            </div>
-        
+        </ul>
           
-           
+          
+        <div class="button"> 
+          <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
+          </div>
         
       </div>
       
@@ -50,26 +48,47 @@
     <br>
     <br>
     <br>
-      <h4 class="text-center">Cadastro de turmas</h4>
+      <h4 class="text-center">Cadastrar alunos</h4>
       
       <div class="card-body">
-          <form method="POST" action="pages/processa/turma_processa.php">
-              <div class="mb-3">
+          <form method="POST" action="pages/processa/alunos_processa.php">
+              <div class="mb-3">  
+            
+
                 <label>Nome:</label>
-                <input type="nome" class="form-control" id="" aria-describedby="emailHelp" name="nome">
-                <label for="exampleInputPassword1" class="form-label">Número de Alunos:</label>
 
-                <input type="e-mail" class="form-control" id="" name="quantidade">
+                <input type="nome" class="form-control" id="" aria-describedby="emailHelp" name="nome" required>
 
-                <label for="exampleInputPassword1" class="form-label" maxlength=100>Ano:</label>
+                <label for="exampleInputPassword1" class="form-label">Matrícula:</label>
+                
+                <input type="e-mail" class="form-control" id="" name="matricula" required>
+                <label>Turma:</label>
+                <select id='turma' name='id_turma' class="form-select" aria-label="Default select example">
+                        <?php
+     
+                            include("/pages/conexao/conexao.php");
+                            $sql_query = $mysqli->query("SELECT * from turma");
+                            $i=0;
+                            while ($dados = $sql_query->fetch_assoc()) {
+                            if ($i==0) {
+                              $i=1;
+                                echo "<option selected value='$dados[id_turma]'> $dados[nome]</option>";
+                            } else {
+                                echo "<option value='$dados[id_turma]'> $dados[nome]</option>";
+                              }
+                                    
+                          }
+                            
+                        ?>
+                                    
+              </select>
 
-                <input type="Senha" class="form-control" id="" name="ano">
 
               </div>
 
-              <a href="turcadastradas.php" ><input type="button" class="btn btn-secondary btn-block" value="Turmas cadastradas"></a>
-               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <input type="submit" class="btn btn-secondary btn-block" name="turmas" value="Cadastrar">
+              
+               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              <input type="submit" class="btn btn-secondary btn-block" name="aluno" value="Cadastrar">
 
             </form>
       </div>

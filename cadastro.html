@@ -27,29 +27,39 @@
       <br>
       <br>
       <br>
-        <h4 class="text-center">Faça seu cadastro</h4>
+        <h4 class="text-center">Cadastre-se</h4>
         
         <div class="card-body">
-            <form>
+            <form method="post" action="pages/processa/cad_processo.php">
                 <div class="mb-3">
+
                   <label>Nome:</label>
-                  <input type="nome" class="form-control" id="" aria-describedby="emailHelp" placeholder="Digite seu nome">
+                  <input type="nome" class="form-control" name="nome" id="" aria-describedby="emailHelp" placeholder="Digite seu nome" required>
                  
-                </div>
-                <div class="mb-3">
+                  <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">E-mail:</label>
 
-                  <input type="e-mail" class="form-control" id="" placeholder="Informe seu e-mail:">
+                  <input type="e-mail" class="form-control" name="email" id="" placeholder="Informe seu e-mail:" required>
 
                   <label for="exampleInputPassword1" class="form-label" maxlength=100>Senha:</label>
 
-                  <input type="password" class="form-control" id="" placeholder="Crie sua senha:">
+                  <input type="password" class="form-control" name="senha" id="" placeholder="Crie sua senha:" required>
+
+                  <label for="exampleInputPassword1" class="form-label">Tipo de usuário:</label>
+
+                  <select class="form-select margin-top-2" name="tipo" aria-label="Default select example" required>
+                  
+                    <option selected value="supervisor">Supervisor</option>
+                    <option value="mentor">Mentor</option>
+                    
+                  </select>
 
                 </div>
                 
-                <a href= "index.html" button type="submit" class="btn btn-outline-success btn-block ">Voltar para o login</button></a> &nbsp; &nbsp; &nbsp; &nbsp; 
+                <a href= "login.php" button type="submit" class="btn btn-outline-success btn-block ">Login</button></a> 
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                 
-                <a href= "inicial.html" button type="submit" class="btn btn-outline-success btn-block ">Cadastre-se</button></a>
+                <input type="submit" class="btn btn-outline-success btn-block " name="cad" value="Cadastrar-se">
 
               </form>
         </div>

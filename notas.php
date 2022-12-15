@@ -29,16 +29,13 @@
             <a class="nav-link active" aria-current="page" href="turmas.html">Turmas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="supervisao.php">Supervisionamento</a>
+            <a class="nav-link active" aria-current="page" href="supervisao.html">Supervisionamento</a>
           </li>
-          </ul>
-
-          <div class="button"> 
-            <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
-            </div>
-        
+        </ul>
           
-           
+          <div class="button"> 
+          <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
+          </div>
         
       </div>
       
@@ -46,30 +43,40 @@
   </nav>
   
   <div class="card" id="telaturma">
-    <img src="https://maringapost.com.br/mundodosnegocios/wp-content/uploads/sites/7/2018/02/%C3%8Dcone-pessoas.jpg" class="cardturma-img">
+    <img src="https://img.icons8.com/ios/500/report-card.png" class="cardturma-img">
     <br>
     <br>
     <br>
-      <h4 class="text-center">Cadastro de turmas</h4>
+      <h4 class="text-center">Notas Bimestrais</h4>
       
       <div class="card-body">
-          <form method="POST" action="pages/processa/turma_processa.php">
+          <form method="POST" action="pages/processa/notas_processa.php">
               <div class="mb-3">
-                <label>Nome:</label>
-                <input type="nome" class="form-control" id="" aria-describedby="emailHelp" name="nome">
-                <label for="exampleInputPassword1" class="form-label">Número de Alunos:</label>
+                <?php
+                echo "<input name='aluno' hidden type='number' value='$_GET[id_aluno]'>"
+                ?>
+                <select class="form-select margin-top-2" name="bim" aria-label="Default select example" required>
+                  
+                  <option selected value="1">1º Bimestre</option>
+                  <option value="2">2º Bimestre</option>
+                  <option value="3">3º Bimestre</option>
+                  <option value="4">4º Bimestre</option>
+                  
+                </select>
 
-                <input type="e-mail" class="form-control" id="" name="quantidade">
+                <br>
 
-                <label for="exampleInputPassword1" class="form-label" maxlength=100>Ano:</label>
+                <label>Nota:</label>
 
-                <input type="Senha" class="form-control" id="" name="ano">
+                <input type="nome" class="form-control" id="" name="nota">
+
+          
 
               </div>
 
-              <a href="turcadastradas.php" ><input type="button" class="btn btn-secondary btn-block" value="Turmas cadastradas"></a>
-               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-              <input type="submit" class="btn btn-secondary btn-block" name="turmas" value="Cadastrar">
+              
+               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              <input type="submit" class="btn btn-secondary btn-block" name="notas" value="Cadastrar">
 
             </form>
       </div>
