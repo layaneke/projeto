@@ -84,7 +84,7 @@ if (isset($_GET["y"])) {
                 $nome = $_GET["nome_turma"];
                 $quant = $_GET["quantidade_turma"];
                 $ano = $_GET["ano_turma"];
-                $user_id = 7;
+                $user_id = $_SESSION["id_usuario"];
 
                 include("../conexao/conexao.php");
                 // echo $nome . $quant . $ano;
@@ -110,7 +110,7 @@ if (isset($_GET["y"])) {
                 $mentor = $_GET["aluno_mentor"];
                 $mentorado = $_GET["aluno_mentorado"];
                 $assunto = $_GET["assunto_mentoria"] ;
-                $user_id = 7;
+                $user_id = $_SESSION["id_usuario"];
                 $aluno_id = 26;
 
 
@@ -137,7 +137,7 @@ if (isset($_GET["y"])) {
                 $mentor = $_GET["aluno_mentor"];
                 $mentorado = $_GET["aluno_mentorado"];
                 $assunto = $_GET["assunto_mentoria"] ;
-                $user_id = 7;
+                $user_id = $_SESSION["id_usuario"];
                 $aluno_id = 1;
 
 
@@ -164,7 +164,7 @@ if (isset($_GET["y"])) {
                 $nome = $_GET["nome_aluno"];
                 $matricula = $_GET["matricula_aluno"];
                 $turma = $_GET["id_turma"];
-                $user_id = 7;
+                $user_id = $_SESSION["id_usuario"];
                 
 
                 include("../conexao/conexao.php");
