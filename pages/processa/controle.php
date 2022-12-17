@@ -65,7 +65,7 @@ if (isset($_GET["y"])) {
                     $_SESSION['nome_usuario'] = $user['nome'];
 
                     $dados=$sql_query->fetch_assoc();
-                    $tipo = $dados["tipo"];
+                    $tipo = $user["tipo"];
                     if ($tipo == "supervisor") {
                         header("location:../../telasupervisor.php");
                     } else if ($tipo == "mentor") {

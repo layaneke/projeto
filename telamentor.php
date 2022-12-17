@@ -47,7 +47,7 @@
         </ul>
 
         <div class="button"> 
-          <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
+          <a href="logout.php"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
           </div>
 
         
