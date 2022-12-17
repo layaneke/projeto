@@ -55,12 +55,21 @@ if (isset($_GET["y"])) {
                 $i = $sql_query->num_rows;
 
                 if ($i==1) {
+
+                    if (!isset($_SESSION)) {
+                        session_start();
+                    }
+
+                    $user =$sql_query->fetch_assoc();
+                    $_SESSION['id_usuario'] = $user['id_user'];
+                    $_SESSION['nome_usuario'] = $user['nome'];
+
                     $dados=$sql_query->fetch_assoc();
                     $tipo = $dados["tipo"];
                     if ($tipo == "supervisor") {
                         echo "homesupervisor";
                     } else if ($tipo == "mentor") {
-                        header("location:../../telamentor.html");
+                        header("location:../../telamentor.php");
                     } 
                 } else {
                     die ("dado incorreto");
@@ -154,7 +163,7 @@ if (isset($_GET["y"])) {
             if ($_GET["cadastrar_aluno"]==1) {
                 $nome = $_GET["nome_aluno"];
                 $matricula = $_GET["matricula_aluno"];
-
+                $turma = $_GET["id_turma"];
                 $user_id = 7;
                 
 
@@ -163,7 +172,7 @@ if (isset($_GET["y"])) {
 
                 if ($stmt = $mysqli->prepare("INSERT INTO alunos (nome, matricula, fk_id_turma) VALUES (?, ?, ?)")) {
                     //vincular valores as interrogacoes (?)
-                    mysqli_stmt_bind_param($stmt,'ssi',$nome, $matricula, $turma_id);
+                    mysqli_stmt_bind_param($stmt,'ssi',$nome, $matricula, $turma);
                     //efetiva e executa a SQL no banco, i.e., insere
                     $status = mysqli_stmt_execute($stmt);
                     if ($status === false) {

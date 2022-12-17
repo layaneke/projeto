@@ -45,7 +45,7 @@ if (isset($_POST["cad"])) {
         }
 
         else {
-            die ("senha incorreta, preencher campo");
+            die ("preencher campo");
         }
     
         
