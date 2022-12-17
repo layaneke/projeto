@@ -58,7 +58,7 @@ if (isset($_GET["y"])) {
                     $dados=$sql_query->fetch_assoc();
                     $tipo = $dados["tipo"];
                     if ($tipo == "supervisor") {
-                        echo "homesupervisor";
+                        header("location:../../telasupervisor.php");
                     } else if ($tipo == "mentor") {
                         header("location:../../telamentor.html");
                     } 
@@ -102,7 +102,7 @@ if (isset($_GET["y"])) {
                 $mentorado = $_GET["aluno_mentorado"];
                 $assunto = $_GET["assunto_mentoria"] ;
                 $user_id = 7;
-                $aluno_id = 21;
+                $aluno_id = 26;
 
 
                 include("../conexao/conexao.php");

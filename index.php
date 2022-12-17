@@ -35,13 +35,13 @@
             <a class="nav-link active" aria-current="page" href="index.php">Página Inicial</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="registros.php">Registros</a>
+            <a class="nav-link active" aria-current="page" href="registros.php"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="turmas.html">Turmas</a>
+            <a class="nav-link active" aria-current="page" href="turmas.html"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="supervisao.html">Supervisionamento</a>
+            <a class="nav-link active" aria-current="page" href="supervisao.html"></a>
           </li>
         </ul>
 
@@ -97,7 +97,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Registros</h5>
                     <p class="card-text">Aqui serão adicionados os registros das atividades correspondentes. Registre os trabalhos que desejar para que assim possa obter maiores resultados. </p>
-                    <a href="registros.php" class="btn btn-secondary">Registros</a>
+                    
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Turmas</h5>
                     <p class="card-text">Aqui estarão registrado as turmas e seus respectivos discentes, informe as informações importantes para o cadastro das turmas, como nome, ano e depois, os alunos.</p>
-                    <a href="turmas.html" class="btn btn-secondary">Turmas</a>
+                    
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Supervisionamento</h5>
                     <p class="card-text">Aqui estará a evolução da mentoria indicando se esta conseguiu atingir seu objetivo, mostrando pelos gráficos uma visão geral das turmas, e singular de cada mentoria.</p>
-                    <a href="supervisao.html" class="btn btn-secondary">Supervisionamento</a>
+                   
                 </div>
             </div>
         </div>

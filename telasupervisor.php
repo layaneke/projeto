@@ -24,31 +24,31 @@
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <b><a class="navbar-brand" href="telamentor.html">Monitorando.com</a></b>
+      <b><a class="navbar-brand" href="telasupervisor.php">Monitorando.com</a></b>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="telamentor.html">Página Inicial</a>
+          
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="telasupervisor.php">Página Inicial</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="registrosmentor.php">Registros</a>
+            <a class="nav-link active" aria-current="page" href="registros.php">Registros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="telamentor.html"></a>
+            <a class="nav-link active" aria-current="page" href="turmas.html">Turmas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="telamentor.html"></a>
+            <a class="nav-link active" aria-current="page" href="supervisao.php">Supervisionamento</a>
           </li>
         </ul>
 
-        <div class="button"> 
+
+          <div class="button"> 
           <a href="cadastro.html"><input type="button"class="btn btn-danger btn-block" name="sair" value="Sair"></a>
           </div>
-
-        
       
           
         
@@ -68,7 +68,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="login/foto aleatória.png" class="d-block w-100" alt="...">
+        <img src="login/carrossel.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
         <img src="login/foto aleatória.png" class="d-block w-100" alt="...">
@@ -91,33 +91,33 @@
 
   <div class="container">
     <div class="row g-3">
-        <div class="col-12 col-md-5 col-lg-3">
+        <div class="col-8 col-md-5 col-lg-3">
             <div class="card">
                 <img src="login/3456426.png" class="card-img-top" alt="Imagem registro">
                 <div class="card-body">
                     <h5 class="card-title">Registros</h5>
-                    <p class="card-text">Aqui serão adicionados os registros das atividades correspondentes, como listas, PDFs e etc. Clique no sinal de '+' e registre os trabalhos que desejar para que assim possa obter maiores resultados. </p>
-                    <a href="registrosmentor.php" class="btn btn-secondary">Registros</a>
+                    <p class="card-text">Aqui serão adicionados os registros das atividades correspondentes. Registre os trabalhos que desejar para que assim possa obter maiores resultados. </p>
+                    <a href="registros.php" class="btn btn-secondary">Registros</a>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-5 col-lg-3">
+        <div class="col-8 col-md-5 col-lg-3">
             <div class="card">
                 <img src="login/info-09-removebg.png" class="card-img-top" alt="Imagem turma">
                 <div class="card-body">
                     <h5 class="card-title">Turmas</h5>
-                    <p class="card-text">Aqui estarão registrado as turmas e seus respectivos discentes, informe as informações importantes para o cadastro das turmas, como nome da turmas, dos supervisores, da matéria e dos alunos.</p>
-                    <a href="" class="btn btn-secondary">Turmas</a>
+                    <p class="card-text">Aqui estarão registrado as turmas e seus respectivos discentes, informe as informações importantes para o cadastro das turmas, como nome, ano e depois, os alunos.</p>
+                    <a href="turmas.html" class="btn btn-secondary">Turmas</a>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-5 col-lg-3">
+        <div class="col-8 col-md-5 col-lg-3">
             <div class="card">
                 <img src="login/images.png" class="card-img-top" alt="Imagem supervisionamento">
                 <div class="card-body">
                     <h5 class="card-title">Supervisionamento</h5>
-                    <p class="card-text">Aqui estará a evolução da mentoria indicando se esta conseguiu atingir seu objetivo de melhor qualidade de ensino, mostrando pelos gráficos uma visão geral das turmas, e singular de cada mentoria.</p>
-                    <a href="" class="btn btn-secondary">Supervisionamento</a>
+                    <p class="card-text">Aqui estará a evolução da mentoria indicando se esta conseguiu atingir seu objetivo, mostrando pelos gráficos uma visão geral das turmas, e singular de cada mentoria.</p>
+                    <a href="supervisao.html" class="btn btn-secondary">Supervisionamento</a>
                 </div>
             </div>
         </div>
