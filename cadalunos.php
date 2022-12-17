@@ -61,21 +61,21 @@
 
                 <label for="exampleInputPassword1" class="form-label">Matrícula:</label>
                 
-                <input type="e-mail" class="form-control" id="" name="matricula" required>
+                <input type="text" class="form-control" id="" name="matricula" required>
                 <label>Turma:</label>
                 <select id='turma' name='id_turma' class="form-select" aria-label="Default select example">
                         <?php
-     
-                            include("/pages/conexao/conexao.php");
+     //pages/processa/alunos_processa.php
+                            include("pages/conexao/conexao.php");
                             $sql_query = $mysqli->query("SELECT * from turma");
                             $i=0;
                             while ($dados = $sql_query->fetch_assoc()) {
                             if ($i==0) {
                               $i=1;
-                                echo "<option selected value='$dados[id_turma]'> $dados[nome]</option>";
+                              echo "<option selected value='$dados[id_turma]'> $dados[nome]</option>";
                             } else {
-                                echo "<option value='$dados[id_turma]'> $dados[nome]</option>";
-                              }
+                              echo "<option value='$dados[id_turma]'> $dados[nome]</option>";
+                            }
                                     
                           }
                             

@@ -73,8 +73,6 @@
                 <h5 class='card-title'></h5>
                 </div>
                 </div>";
-          
-
         }
         $mysqli->close();
 
