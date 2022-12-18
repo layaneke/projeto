@@ -68,7 +68,7 @@
         
         while ($dados=$sql_query->fetch_assoc()) {
           echo "<div class='card border-secondary mb-3' style='max-width: 18rem;'>
-                <div class='card-header bg-transparent border-secondary'><a href='alunos.php'>$dados[nome]</a></div>
+                <div class='card-header bg-transparent border-secondary'><a href='alunos.php?id=$dados[id_turma]'>$dados[nome]</a></div>
                 <div class='card-body text-ligth'>
                 <h5 class='card-title'></h5>
                 </div>

@@ -16,7 +16,7 @@ if (isset($_POST["aluno"])) {
     if ($idturma!='') {
         $pr = $pr. "&id_turma=" .$idturma;
     } 
-
+    
     header("location:controle.php?y=1&".$pr."&cadastrar_aluno=1");
 }
 

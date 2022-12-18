@@ -68,7 +68,7 @@
 
     <?php
       include("pages/conexao/conexao.php");
-        $sql = "SELECT * from alunos ORDER BY id_aluno DESC";
+        $sql = "SELECT * from alunos where fk_id_turma=$_GET[id] ORDER BY id_aluno DESC";
         $result = $mysqli->query($sql);
         
 
