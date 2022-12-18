@@ -255,7 +255,7 @@ if (isset($_GET["y"])) {
                     
 
                     $mysqli->close();
-                    header("location:../../alunos.php");
+                    header("location:../../alunos.php?id=$turma");
                 }
                 
             
@@ -265,11 +265,13 @@ if (isset($_GET["y"])) {
             if ($_GET["cadastrar_notas"]==1) {
                 $nota = $_GET["valor_nota1"];
                 $bim = $_GET["bim_nota"];
-                $user_id = 7;
+                $user_id = $_SESSION["id_usuario"];
                 $aluno_id = $_GET["aluno_nota"];
                 
 
                 include("../conexao/conexao.php");
+                $sql_query = $mysqli->query("SELECT fk_id_turma from alunos where id_aluno=$aluno_id");
+                $d = $sql_query->fetch_assoc();
             
                 if ($stmt = $mysqli->prepare("UPDATE notas SET valor=? WHERE bim=? AND fk_id_aluno=?")) {
                     //vincular valores as interrogacoes (?)
@@ -282,7 +284,7 @@ if (isset($_GET["y"])) {
                     mysqli_stmt_close($stmt);
                 }
                 $mysqli->close();
-                header("location:../../alunos.php");
+                header("location:../../alunos.php?id=$d[fk_id_turma]");
             }
         }
 
