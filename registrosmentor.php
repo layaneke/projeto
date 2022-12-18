@@ -57,16 +57,51 @@
                   <div class="mb-3">
                     <label>Nome:</label>
 
-                    <input type="nome" class="form-control" id="" name="nome" aria-describedby="emailHelp" placeholder="Ex.: Mentoria 1" required>
+                    <input type="text" class="form-control" id="" name="nome" aria-describedby="emailHelp" placeholder="Ex.: Mentoria 1" required>
             
                     <label for="exampleInputPassword1" class="form-label">Aluno Mentor:</label>
     
-                    <input type="aluno" class="form-control" id="" placeholder="" name="mentor" required>
+                    <select id='turma' name='mentor' class="form-select" aria-label="Default select example">
+              
+                    <?php
+     
+                            include("pages/conexao/conexao.php");
+                            $sql_query = $mysqli->query("SELECT id_user, nome from usuario where tipo='mentor'");
+                            $i=0;
+                            while ($dados = $sql_query->fetch_assoc()) {
+                              if ($i==0) {
+                                $i=1;
+                                echo "<option selected value='$dados[id_user]'> $dados[nome]</option>";
+                              } else {
+                                echo "<option value='$dados[id_user]'> $dados[nome]</option>";
+                              }
+                                    
+                          }
+                            
+                        ?>
+                    </select>
+                    <label for="mentorado" class="form-label" >Aluno Mentorado:</label>
                     
-                    <label for="exampleInputPassword1" class="form-label" >Aluno Mentorado:</label>
+                    <select id='mentorado' name='mentorado' class="form-select" aria-label="Default select example">
+              
+                        <?php
 
-                    <input type="aluno" class="form-control" id="" placeholder=""  name="mentorado" required>
-    
+                            include("pages/conexao/conexao.php");
+                            $sql_query = $mysqli->query("SELECT id_aluno, nome from alunos");
+                            $i=0;
+                            while ($dados = $sql_query->fetch_assoc()) {
+                              if ($i==0) {
+                                $i=1;
+                                echo "<option selected value='$dados[id_aluno]'> $dados[nome]</option>";
+                              } else {
+                                echo "<option value='$dados[id_aluno]'> $dados[nome]</option>";
+                              }
+                                    
+                          }
+                            
+                        ?>
+                    </select>
+
                     <label for="exampleInputPassword1" class="form-label" maxlength=100 >Assunto:</label>
     
                     <input type="Senha" class="form-control" id=""  name="assunto" placeholder="Ex.: Tabela verdade " required>

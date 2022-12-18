@@ -21,7 +21,7 @@ if (isset($_POST["registros"])) {
     if ($assunto!='') {
         $pr = $pr. "&assunto_mentoria=" . $assunto;
     }
-
+    
     header("location:controle.php?y=1&".$pr."&registrar_mentoria=1");
 }
 

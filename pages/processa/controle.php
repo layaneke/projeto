@@ -106,16 +106,20 @@ if (isset($_GET["y"])) {
             //MENTORIA
         } else if (isset($_GET["registrar_mentoria"])) {
             if ($_GET["registrar_mentoria"]==1) {
-                $nome = $_GET["nome_mentoria"];
-                $mentor = $_GET["aluno_mentor"];
-                $mentorado = $_GET["aluno_mentorado"];
-                $assunto = $_GET["assunto_mentoria"] ;
-                $user_id = $_SESSION["id_usuario"];
-                $aluno_id = 26;
-
 
                 include("../conexao/conexao.php");
-                //echo $nome . $mentor . $mentorado . $assunto;
+
+                $nome = $_GET["nome_mentoria"];
+                $assunto = $_GET["assunto_mentoria"] ;
+                $user_id = $_SESSION["id_usuario"];
+                $aluno_id = $_GET["aluno_mentorado"];
+                $id_mentor = $_SESSION["id_usuario"];
+
+                $sql_query = $mysqli->query("SELECT u.nome as mentor, a.nome as aluno from usuario u, alunos a where u.id_user='$id_mentor' or a.id_aluno='$aluno_id'");
+                $consulta = $sql_query->fetch_assoc();
+                
+                $mentor = $consulta["mentor"];
+                $mentorado = $consulta["aluno"];
 
                 if ($stmt = $mysqli->prepare("INSERT INTO mentorias (nome, mentor, mentorado, assunto, fk_id_user, fk_id_aluno)  VALUES (?, ?, ?, ?, ?, ?)")) {
                     //vincular valores as interrogacoes (?)
@@ -133,18 +137,27 @@ if (isset($_GET["y"])) {
             // ATUALIZAR REGISTRO
         } else if (isset($_GET["atualizar_mentoria"])) {
             if ($_GET["atualizar_mentoria"]==1) {
+                include("../conexao/conexao.php");
+
                 $nome = $_GET["nome_mentoria"];
-                $mentor = $_GET["aluno_mentor"];
-                $mentorado = $_GET["aluno_mentorado"];
+                
                 $assunto = $_GET["assunto_mentoria"] ;
                 $user_id = $_SESSION["id_usuario"];
-                $aluno_id = 1;
+                $aluno_id = $_GET["aluno_mentorado"];
+                $id = $_GET["idM"];
 
+                $sql_query = $mysqli->query("SELECT u.nome as mentor, a.nome as aluno from usuario u, alunos a where u.id_user='$user_id' and a.id_aluno='$aluno_id'");
+                $consulta = $sql_query->fetch_assoc();
+                
+                $mentor = $consulta["mentor"];
+                $mentorado = $consulta["aluno"];
 
-                include("../conexao/conexao.php");
+                
+
+                
                 //echo $nome . $mentor . $mentorado . $assunto;
 
-                if ($stmt = $mysqli->prepare("UPDATE mentorias SET nome=?, mentor=?, mentorado=?, assunto=?, fk_id_user=?, fk_id_aluno=?")) {
+                if ($stmt = $mysqli->prepare("UPDATE mentorias SET nome=?, mentor=?, mentorado=?, assunto=?, fk_id_user=?, fk_id_aluno=? where id_mentoria=$id")) {
                     //vincular valores as interrogacoes (?)
                     mysqli_stmt_bind_param($stmt,'ssssii',$nome, $mentor, $mentorado, $assunto, $user_id, $aluno_id);
                     //efetiva e executa a SQL no banco, i.e., insere

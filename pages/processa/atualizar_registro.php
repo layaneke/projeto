@@ -22,7 +22,11 @@ if (isset($_POST["atualizar"])) {
         $pr = $pr. "&assunto_mentoria=" . $assunto;
     }
 
-    //echo $nome.$mentor.$mentorado.$assunto;
+    $id = isset($_POST["idM"]) ? $_POST["idM"] : '';
+    if ($id!='') {
+        $pr = $pr. "&idM=" . $id;
+    }
+    //echo $nome.$mentor.$mentorado.$assunto. " " . $id;
     header("location:controle.php?y=1&".$pr."&atualizar_mentoria=1");
 }
 

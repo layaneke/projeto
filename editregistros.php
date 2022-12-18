@@ -7,7 +7,7 @@ if (!empty($_GET['id']))
   include("pages/conexao/conexao.php");
 
   $id = $_GET['id'];
-  echo $id;
+  
   $sqlSelect = "SELECT * FROM mentorias WHERE id_mentoria=$id";
 
   $result = $mysqli->query($sqlSelect);
@@ -15,16 +15,18 @@ if (!empty($_GET['id']))
   if($result->num_rows == 1)
   {
 
-
+    
     while($user_data = $result->fetch_assoc())
     {
 
       $nome = $user_data["nome"];
       $mentor = $user_data["mentor"];
+
+      
       $mentorado = $user_data["mentorado"];
       $assunto = $user_data["assunto"] ;
-      $user_id = 7;
-      $aluno_id = 1;
+      $user_id = $user_data["fk_id_user"];
+      $aluno_id = $user_data["fk_id_aluno"];
     }
    
   
@@ -96,15 +98,52 @@ if (!empty($_GET['id']))
               
                     <label for="exampleInputPassword1" class="form-label">Aluno Mentor:</label>
     
-                    <input type="aluno" name="mentor" class="form-control" id="" placeholder="" value="<?php  echo $mentor ?>">
-                    
+                    <select id='turma' name='mentor' class="form-select" aria-label="Default select example">
+              
+                    <?php
+     
+                            include("pages/conexao/conexao.php");
+                            $sql_query = $mysqli->query("SELECT id_user, nome from usuario where tipo='mentor'");
+                            $i=0;
+                            while ($dados = $sql_query->fetch_assoc()) {
+                              if ($i==0) {
+                                $i=1;
+                                echo "<option selected value='$dados[id_user]'> $dados[nome]</option>";
+                              } else {
+                                echo "<option value='$dados[id_user]'> $dados[nome]</option>";
+                              }
+                                    
+                          }
+                            
+                        ?>
+                    </select>
+
                     <label for="exampleInputPassword1" class="form-label">Aluno Mentorado:</label>
 
-                    <input type="text" name="mentorado" class="form-control" id="" placeholder="" value="<?php echo $mentorado ?>">
-    
+                    <select id='mentorado' name='mentorado' class="form-select" aria-label="Default select example">
+              
+                        <?php
+
+                            
+                            $sql_query = $mysqli->query("SELECT id_aluno, nome from alunos");
+                            $i=0;
+                            while ($dados = $sql_query->fetch_assoc()) {
+                              if ($i==0) {
+                                $i=1;
+                                echo "<option selected value='$dados[id_aluno]'> $dados[nome]</option>";
+                              } else {
+                                echo "<option value='$dados[id_aluno]'> $dados[nome]</option>";
+                              }
+                                    
+                          }
+                            $mysqli->close();
+                        ?>
+                    </select>
                     <label for="exampleInputPassword1" class="form-label" maxlength=100>Assunto:</label>
     
                     <input type="text" name="assunto" class="form-control" id="" placeholder="Ex.: Tabela verdade" value="<?php echo $assunto ?>">
+
+                    <input type="hidden" name="idM" value=<?php echo $id ?>>
     
                   </div>
 
